@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Reminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Event Reminder System</h1>
+    <h2>Add New Event</h2>
+    <form action="/add_event" method="POST" onsubmit="return validateForm()">
+        <label for="name">Event Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="date">Date (YYYY-MM-DD):</label>
+        <input type="date" id="date" name="date" required><br><br>
+        
+        <label for="time">Time (HH:MM):</label>
+        <input type="time" id="time" name="time" required><br><br>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea><br><br>
+        
+        <button type="submit">Add Event</button>
+    </form>
+    <br>
+    <a href="/events">View All Events</a>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
